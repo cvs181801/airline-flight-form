@@ -23,9 +23,13 @@ class App extends React.Component {
       lastName: "",
       age: "",
       gender: "",
-      destination: ""
+      destination: "Rome",
+      vegan: false,
+      noGluten: false,
+      kosher: false
     }
-    this.handleChange = this.handleChange.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(event) {
@@ -33,11 +37,16 @@ class App extends React.Component {
     type === "checkbox" ? this.setState({ [name]: checked }) : this.setState({ [name]:value }) 
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+    alert("Thank you for providing your info!  We look forward to flying with you.")
+  }
+
   render(){
     return (
       <div className="App">
       <form>
-        <h1>Welcome to Bella Air!</h1>
+        <h1>Welcome to Lorem Ipsum Air!</h1>
         <label>
         First Name:
         <input
@@ -132,8 +141,42 @@ class App extends React.Component {
           <option>Florence</option>
           <option>Venice</option>
         </select> 
-                 
-
+<br/>
+<p>Dietary Restrictions</p>   
+<br/>
+        <label>
+        Vegan
+        <input
+        type="checkbox"
+        name="vegan"
+        onChange={this.handleChange}
+        checked={this.state.vegan}
+        ></input> 
+        </label>     
+<br/>
+        <label>
+        Gluten Free
+        <input
+        type="checkbox"
+        name="noGluten"
+        onChange={this.handleChange}
+        checked={this.state.noGluten}
+        ></input> 
+        </label>
+<br/>
+        <label>
+        Kosher
+        <input
+        type="checkbox"
+        name="kosher"
+        onChange={this.handleChange}
+        checked={this.state.kosher}
+        ></input> 
+        </label>          
+<br/>
+      <button
+      onChange={this.handleSubmit}
+      >Submit</button>
       </form>
       </div>
     );
