@@ -1,38 +1,14 @@
-import React from "react"
+import React from 'react'
+import Formcontainer from "./components/Formcontainer"
 
-class Form extends React.Component {
-  constructor(){
-    super()
-    this.state = {
-      firstName: "",
-      lastName: "",
-      age: "",
-      gender: "",
-      destination: "Rome",
-      vegan: false,
-      noGluten: false,
-      kosher: false
-    }
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
-
-  handleChange(event) {
-    const {name, value, type, checked} = event.target
-    type === "checkbox" ? this.setState({ [name]: checked }) : this.setState({ [name]:value }) 
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    alert("Thank you for providing your info!  We look forward to flying with you.")
-  }
-
-  render(){
+export default function Formcomponent(props) {
     return (
+        <div>
+             return (
       <div className="App">
       <form
       name="form"
-      onSubmit={this.handleSubmit}
+      onSubmit={props.handleSubmit}
       >
         <h1>Welcome to Lorem Ipsum Air!</h1>
         <label>
@@ -41,8 +17,8 @@ class Form extends React.Component {
         type="text"
         name="firstName"
         placeholder="first name"
-        onChange={this.handleChange}
-        value={this.state.firstName}
+        onChange={props.handleChange}
+        value={props.state.firstName}
         ></input> 
         </label>
 <br/>
@@ -52,8 +28,8 @@ class Form extends React.Component {
         type="text"
         name="lastName"
         placeholder="last name"
-        onChange={this.handleChange}
-        value={this.state.lastName}
+        onChange={props.handleChange}
+        value={props.state.lastName}
         ></input> 
         </label>
 <br/>
@@ -63,8 +39,8 @@ class Form extends React.Component {
         type="number"
         name="age"
         placeholder="age"
-        onChange={this.handleChange}
-        value={this.state.age}
+        onChange={props.handleChange}
+        value={props.state.age}
         ></input> 
         </label>
 <br/>
@@ -74,8 +50,8 @@ class Form extends React.Component {
         <input
         type="radio"
         name="gender"
-        onChange={this.handleChange}
-        checked={this.state.gender === "female"}
+        onChange={props.handleChange}
+        checked={props.state.gender === "female"}
         value="female"
         ></input> 
         </label>
@@ -86,8 +62,8 @@ class Form extends React.Component {
         <input
         type="radio"
         name="gender"
-        onChange={this.handleChange}
-        checked={this.state.gender === "male"}
+        onChange={props.handleChange}
+        checked={props.state.gender === "male"}
         value="male"
         ></input> 
         </label>
@@ -98,8 +74,8 @@ class Form extends React.Component {
         <input
         type="radio"
         name="gender"
-        onChange={this.handleChange}
-        checked={this.state.gender === "trans/nonbinary"}
+        onChange={props.handleChange}
+        checked={props.state.gender === "trans/nonbinary"}
         value="trans/nonbinary"
         ></input> 
         </label>
@@ -110,8 +86,8 @@ class Form extends React.Component {
         <input
         type="radio"
         name="gender"
-        onChange={this.handleChange}
-        checked={this.state.gender === "declined"}
+        onChange={props.handleChange}
+        checked={props.state.gender === "declined"}
         value="declined"
         ></input> 
         </label>    
@@ -122,8 +98,8 @@ class Form extends React.Component {
         <select
         type="select"
         name="destination"
-        onChange={this.handleChange}
-        value={this.state.destination}
+        onChange={props.handleChange}
+        value={props.state.destination}
         >
           <option>Rome</option>
           <option>Florence</option>
@@ -137,8 +113,8 @@ class Form extends React.Component {
         <input
         type="checkbox"
         name="vegan"
-        onChange={this.handleChange}
-        checked={this.state.vegan}
+        onChange={props.handleChange}
+        checked={props.state.vegan}
         ></input> 
         </label>     
 <br/>
@@ -147,8 +123,8 @@ class Form extends React.Component {
         <input
         type="checkbox"
         name="noGluten"
-        onChange={this.handleChange}
-        checked={this.state.noGluten}
+        onChange={props.handleChange}
+        checked={props.state.noGluten}
         ></input> 
         </label>
 <br/>
@@ -157,8 +133,8 @@ class Form extends React.Component {
         <input
         type="checkbox"
         name="kosher"
-        onChange={this.handleChange}
-        checked={this.state.kosher}
+        onChange={props.handleChange}
+        checked={props.state.kosher}
         ></input> 
         </label>          
 <br/>
@@ -168,7 +144,6 @@ class Form extends React.Component {
       </form>
       </div>
     );
-  }
+        </div>
+    )
 }
-
-export default Form;
