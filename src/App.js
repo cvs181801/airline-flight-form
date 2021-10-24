@@ -45,7 +45,10 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-      <form>
+      <form
+      name="form"
+      onSubmit={this.handleSubmit}
+      >
         <h1>Welcome to Lorem Ipsum Air!</h1>
         <label>
         First Name:
@@ -175,7 +178,7 @@ class App extends React.Component {
         </label>          
 <br/>
       <button
-      onChange={this.handleSubmit}
+      type="submit"
       >Submit</button>
       </form>
       </div>
