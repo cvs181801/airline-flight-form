@@ -2,12 +2,12 @@ import React from 'react'
 import Formcontainer from "./Formcontainer"
 
 function Formcomponent(props) {
-    console.log("vegan state :", props.data.vegan)
+   console.log(props.onChange)
     return (
       <div className="App">
       <form
       name="form"
-      onSubmit={props.data.handleSubmit}
+      onSubmit={props.onSubmit}
       >
         <h1>Welcome to Lorem Ipsum Air!</h1>
         <label>
@@ -16,7 +16,7 @@ function Formcomponent(props) {
         type="text"
         name="firstName"
         placeholder="first name"
-        onChange={props.data.handleChange}
+        onChange={props.onChange}
         value={props.data.firstName}
         ></input> 
         </label>
@@ -27,7 +27,7 @@ function Formcomponent(props) {
         type="text"
         name="lastName"
         placeholder="last name"
-        onChange={props.data.handleChange}
+        onChange={props.onChange}
         value={props.data.lastName}
         ></input> 
         </label>
@@ -38,7 +38,7 @@ function Formcomponent(props) {
         type="number"
         name="age"
         placeholder="age"
-        onChange={props.data.handleChange}
+        onChange={props.onChange}
         value={props.data.age}
         ></input> 
         </label>
@@ -49,7 +49,7 @@ function Formcomponent(props) {
         <input
         type="radio"
         name="gender"
-        onChange={props.data.handleChange}
+        onChange={props.onChange}
         checked={props.data.gender === "female"}
         value="female"
         ></input> 
@@ -61,7 +61,7 @@ function Formcomponent(props) {
         <input
         type="radio"
         name="gender"
-        onChange={props.data.handleChange}
+        onChange={props.onChange}
         checked={props.data.gender === "male"}
         value="male"
         ></input> 
@@ -73,7 +73,7 @@ function Formcomponent(props) {
         <input
         type="radio"
         name="gender"
-        onChange={props.data.handleChange}
+        onChange={props.onChange}
         checked={props.data.gender === "trans/nonbinary"}
         value="trans/nonbinary"
         ></input> 
@@ -85,7 +85,7 @@ function Formcomponent(props) {
         <input
         type="radio"
         name="gender"
-        onChange={props.data.handleChange}
+        onChange={props.onChange}
         checked={props.data.gender === "declined"}
         value="declined"
         ></input> 
@@ -97,7 +97,7 @@ function Formcomponent(props) {
         <select
         type="select"
         name="destination"
-        onChange={props.data.handleChange}
+        onChange={props.onChange}
         value={props.data.destination}
         >
           <option>Rome</option>
@@ -112,7 +112,7 @@ function Formcomponent(props) {
         <input
         type="checkbox"
         name="vegan"
-        onChange={props.data.handleChange}
+        onChange={props.onChange}
         checked={props.data.vegan}
         ></input> 
         </label>     
@@ -122,7 +122,7 @@ function Formcomponent(props) {
         <input
         type="checkbox"
         name="noGluten"
-        onChange={props.data.handleChange}
+        onChange={props.onChange}
         checked={props.data.noGluten}
         ></input> 
         </label>
@@ -132,7 +132,7 @@ function Formcomponent(props) {
         <input
         type="checkbox"
         name="kosher"
-        onChange={props.data.handleChange}
+        onChange={props.onChange}
         checked={props.data.kosher}
         ></input> 
         </label>          
