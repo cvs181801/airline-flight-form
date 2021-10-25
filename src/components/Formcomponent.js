@@ -2,7 +2,7 @@ import React from 'react'
 import Formcontainer from "./Formcontainer"
 
 function Formcomponent(props) {
-   console.log(props.onChange)
+   
     return (
       <div className="App">
       <form
@@ -137,6 +137,15 @@ function Formcomponent(props) {
         ></input> 
         </label>          
 <br/>
+<p><em>Please review your information before submitting:</em></p>
+      <h2>{props.data.firstName} {props.data.lastName}</h2>
+      <p>{props.data.age}</p>
+      <p>{props.data.gender}</p>
+      <p>{props.data.destination}</p>
+      <p>Vegan: {props.data.vegan ? "Yes" : "No"}</p>
+      <p>Gluten Free: {props.data.noGluten ? "Yes" : "No"}</p>
+      <p>Kosher: {props.data.kosher ? "Yes" : "No"}</p>
+      
       <button
       type="submit"
       >Submit</button>
