@@ -1,5 +1,5 @@
 import React from "react"
-import Formcomponent from "./components/Formcomponent"
+import Formcomponent from "./Formcomponent"
 
 class Formcontainer extends React.Component {
   constructor(){
@@ -33,7 +33,7 @@ class Formcontainer extends React.Component {
                 <Formcomponent
                 onChange={this.handleChange}
                 onSubmit={this.handleSubmit}
-                {...this.state}
+                data={this.state}
                 />
                 )
         }
